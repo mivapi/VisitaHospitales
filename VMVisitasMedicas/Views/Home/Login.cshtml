@@ -1,0 +1,37 @@
+﻿@model VMVisitasMedicas.Models.Usuario
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<form id="formchk" method="post" action="Login">
+    <div class="form-horizontal">
+        <h4>Usuario</h4>
+        <hr />
+        <div class="form-group">
+            <label id="usu_nombre" class="control-label col-md-2">NickName</label>
+            @*@Html.LabelFor(model => model.usu_nombre, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                <input type="text" autocomplete="on" class="form-control" id="txbuser" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label id="usu_nombre" class="control-label col-md-2">Password</label>
+            @*@Html.LabelFor(model => model.usu_nombre, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                <input type="password" autocomplete="on" class="form-control" id="txbpassword" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Entrar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

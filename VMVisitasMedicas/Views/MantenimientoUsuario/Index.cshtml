@@ -1,0 +1,62 @@
+﻿@model IEnumerable<VMVisitasMedicas.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Control de Datos</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido Paterno
+        </th>
+        <th>
+            Apellido Materno
+        </th>
+        <th>
+            Edad
+        </th>
+        <th>
+            Teléfono
+        </th>
+        <th></th>
+    </tr>
+
+
+@foreach (var item in Model)
+{
+    if (Convert.ToInt32(Session["admin"]) == 1)
+    {
+        @Html.ActionLink("Usuarios", "InicioXUsuario", new { id = item.usu_id })
+        <br />
+        @Html.ActionLink("Hospitales", "HospitalConsulta", new { id = item.usu_id })
+        <br />
+        @Html.ActionLink("Médicos", "ConsultaMedico", new { id = item.usu_id })
+    }
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_apellidoPaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_apellidoMaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_telefono)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.usu_id }) |
+            @Html.ActionLink("Citas", "Dates", new { id = item.usu_id })
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<VMVisitasMedicas.Models.Medico>
+
+@{
+    ViewBag.Title = "Consulta Médico";
+}
+
+<h2>Consulta Médico</h2>
+
+<p>
+    @Html.ActionLink("Registrar Médico", "MedicoRegistra", new { id= @ViewBag.MessageID })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.med_nombre)*@
+            Nombre
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.apellidoP)*@
+            Apellido Paterno
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.apellidoM)*@
+            Apellido Materno
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.sex_id)*@
+            Sexo
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.med_especialidad)*@
+            Especialidad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.con_id)*@
+            Consultorio
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.med_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidoP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidoM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sex_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.med_especialidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.con_id)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Eliminar", "Delete", new {  /*id=item.hos_id*/ })
+        </td>
+    </tr>
+}
+</table>
+<div>
+    @Html.ActionLink("Regresar a mis Datos", "Index", new { id = ViewBag.MessageID })
+</div>

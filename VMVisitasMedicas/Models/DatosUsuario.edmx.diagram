@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e05b04ba53344102af106031146eeca6" Name="Diagram1">
+        <EntityTypeShape EntityType="bd_VMVisitasMedicasModel.Consultorio" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_VMVisitasMedicasModel.Estado_Usuario" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_VMVisitasMedicasModel.Hospital" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_VMVisitasMedicasModel.Medico" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_VMVisitasMedicasModel.Sexo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_VMVisitasMedicasModel.Usuario" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_VMVisitasMedicasModel.Visita" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="bd_VMVisitasMedicasModel.FK__Visita__con_id__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_VMVisitasMedicasModel.FK__Usuario__est_id__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_VMVisitasMedicasModel.FK__Visita__hos_id__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_VMVisitasMedicasModel.FK__Visita__med_id__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_VMVisitasMedicasModel.FK__Usuario__sex_id__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_VMVisitasMedicasModel.FK__Visita__usu_id__20C1E124" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

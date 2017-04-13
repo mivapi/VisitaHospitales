@@ -1,0 +1,93 @@
+﻿@model IEnumerable<VMVisitasMedicas.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_apellidoPaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_apellidoMaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sex_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.est_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_fecha_alta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_fecha_baja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_admin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_apellidoPaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_apellidoMaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sex_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.est_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_fecha_alta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_fecha_baja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_admin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

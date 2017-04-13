@@ -1,0 +1,96 @@
+﻿@model IEnumerable<VMVisitasMedicas.Models.Visita>
+
+@{
+    ViewBag.Title = "Citas";
+}
+
+<h2>Citas</h2>
+
+@Html.ActionLink("Agendar Nueva Cita", "DateCreate", new { id = @ViewBag.Message })
+<table class="table table-hover">
+    <tr>
+       
+        <th>
+            @*@Html.DisplayNameFor(model => model.vis_fecha_cita)*@
+            Fecha Cita
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.med_id)*@
+            Médico
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.hos_id)*@
+            Hospital
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.con_id)*@
+            Consultorio
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.vis_estado)*@
+            Estado Cita
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    if (@Html.DisplayFor(modelItem => item.vis_estado).ToString() == "Concluida")
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.vis_fecha_cita)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.med_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hos_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vis_estado)
+            </td>
+            <td>
+                @Html.ActionLink("Detalles", "Details", new {  id = item.usu_id  })
+            </td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.vis_fecha_cita)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.med_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hos_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vis_estado)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Detalles", "Details", new {  id=item.usu_id })
+            </td>
+        </tr>
+    }
+
+
+}
+
+</table>
+<div>
+    @Html.ActionLink("Regresar a mis Datos", "Index", new { id = @ViewBag.Message })
+</div>

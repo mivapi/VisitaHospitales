@@ -1,0 +1,57 @@
+﻿@model VMVisitasMedicas.Models.Visita
+
+@{
+    ViewBag.Title = "Crear Cita";
+}
+
+
+<h2>DateCreate</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Visita</h4>
+        <hr />
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.vis_fecha_cita, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label id="usu_nombre" class="control-label col-md-2">Fecha Cita</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vis_fecha_cita, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.vis_fecha_cita, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.usu_id, new { htmlAttributes = new { @class = "form-control", Value = @ViewBag.MessageID, type = "hidden" } })
+                @Html.ValidationMessageFor(model => model.usu_id, "", new { @class = "text-danger" })
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label id="usu_nombre" class="control-label col-md-2">Estado de Cita:</label>
+            @*@Html.LabelFor(model => model.vis_estado, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.vis_estado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.vis_estado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Regresar Citas", "Dates", new { id = @ViewBag.MessageID })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

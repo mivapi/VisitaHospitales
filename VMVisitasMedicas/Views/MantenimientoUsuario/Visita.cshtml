@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VMVisitasMedicas.Models.Visita>
+
+@{
+    ViewBag.Title = "Visita";
+}
+
+<h2>Visita</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vis_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vis_fecha_cita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.med_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hos_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.con_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vis_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vis_fecha_cita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.med_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hos_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.con_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,66 @@
+﻿@model VMVisitasMedicas.Models.Visita
+
+@{
+    ViewBag.Title = "Detalles Cita";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Visita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vis_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vis_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vis_fecha_cita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vis_fecha_cita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usu_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usu_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.med_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.med_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hos_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hos_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.con_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.con_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
